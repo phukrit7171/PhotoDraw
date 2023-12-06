@@ -1,0 +1,16 @@
+body{
+    background-color: #353535;
+    color: white;
+    overflow: hidden;
+    text-decoration: none;
+}
+header{
+    background-color: #1E1E1E;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.nav-link{
+    color:white;
+}
