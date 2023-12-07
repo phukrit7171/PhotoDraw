@@ -32,7 +32,7 @@ function randomWalk() {
 
         // Draw a point
         ctx.beginPath();
-        ctx.arc(xx, yy, 2, 0, 2 * Math.PI);
+        ctx.arc(xx, yy, 1, 0, 2 * Math.PI);
         ctx.fillStyle = "black";
         ctx.fill();
     }
