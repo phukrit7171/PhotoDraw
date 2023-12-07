@@ -43,7 +43,7 @@
   </header>
   <!-- Tab panes -->
   <div class="tab-content">
-    <div id="home" class="container tab-pane active text-center"><br>
+    <div id="home" class="container-fluid tab-pane active text-center"><br>
       <img src="./imgs/logo.png" alt="PhotoDraw Logo" width="200px">
       <p class="h1 fst-italic fw-bold">PhotoDraw</p>
       <p class="h4 text-white p-3">is a web application that can make your drawing easier.</p>
@@ -56,27 +56,27 @@
       </div>
     </div>
 
-    <div id="drawing" class="container tab-pane fade text-center"><br>
+    <div id="drawing" class="container-fluid tab-pane fade text-center"><br>
       <h3>Drawing</h3>
       <p></p>
     </div>
 
     <!-- Inside the creativity tab -->
-    <div id="creativity" class="container tab-pane fade text-center"><br>
+    <div id="creativity" class="container-fluid tab-pane fade text-center"><br>
       <div class="container m-1 p-0">
       </div>
       <canvas onclick="randomWalk()" class="container-sm bg-white rounded-5 p-0 text-center" id="canvas"></canvas>
-      <button onclick="randomWalk()" type="button"
-        class="btn btn-lg text-white rounded-5 py-2 my-3 container-fluid" style="background-color: #976479;">Random</button>
-      <p class="container border-1 rounded-5 p-4 text-white mb-5" style="background-color: #484848;">
+      <button onclick="randomWalk()" type="button" class="btn btn-lg text-white rounded-5 py-2 my-3 container-fluid"
+        style="background-color: #976479;">Random</button>
+      <p class="container-fluid border-1 rounded-5 p-4 text-white mb-5" style="background-color: #484848;">
         Try to imagine this into something according to your creativity and draw it.
       </p>
     </div>
 
 
-    <div id="prices" class="container tab-pane fade text-center"><br>
-      <h3>Prices</h3>
-      <p></p>
+    <div id="prices" class="container-fluid tab-pane fade text-center"><br>
+      <img class="page-item p-1" style="width: 20rem;" src="./imgs/NoAds.png" alt="NoAds Paid">
+      <img class="page-item p-1" style="width: 20rem;" src="./imgs/UnlockMode.png" alt="Unlock More Detail Mode Paid">
     </div>
   </div>
 
