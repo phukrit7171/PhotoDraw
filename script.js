@@ -9,7 +9,7 @@ function randomWalk() {
     // Calculate the canvas size to maintain a 16:9 aspect ratio
     var containerWidth = canvas.parentElement.offsetWidth;
     var canvasWidth = containerWidth * 0.8; // 80% of the container width
-    var canvasHeight = (canvasWidth * 9) / 16; // Maintain a 16:9 aspect ratio
+    var canvasHeight = (canvasWidth * 1) / 2; // Maintain a 16:9 aspect ratio
 
     // Set the canvas size
     canvas.width = canvasWidth;
