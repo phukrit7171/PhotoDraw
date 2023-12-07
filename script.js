@@ -37,12 +37,3 @@ function randomWalk() {
         ctx.fill();
     }
 }
-// Make sure to call the randomWalk function when the page is loaded
-document.addEventListener("DOMContentLoaded", function () {
-    randomWalk();
-});
-
-// Update the canvas size on window resize
-window.addEventListener("resize", function () {
-    randomWalk();
-});
