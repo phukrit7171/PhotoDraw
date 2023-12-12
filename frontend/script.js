@@ -37,3 +37,22 @@ function randomWalk() {
         ctx.fill();
     }
 }
+
+// Call the function when upload image and send a image to server using banary tranmission
+function uploadImage() {
+    const fileInput = document.getElementById('imgUpload');
+    const uploadedImage = document.getElementById('uploadedImage');
+    
+    const file = fileInput.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        uploadedImage.src = e.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      console.error('No file selected');
+    }
+  }

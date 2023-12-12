@@ -59,11 +59,12 @@
           soon.</p>
       </div>
     </div>
+
     <!-- Inside the drawing tab -->
     <div id="drawing" class="container-fluid tab-pane fade text-center"><br>
-      <input type="file" accept=".jpg" name="imgUpload" id="imgUpload" style="display:none;" />
+      <input type="file" accept=".jpg" name="imgUpload" id="imgUpload" style="display:none;" onchange="uploadImage()" />
       <label for="imgUpload">
-        <img class="img-fluid" src="./imgs/upload.png" alt="upload">
+        <img class="img-fluid" id="uploadedImage" src="./imgs/upload.png" alt="upload">
       </label>
     </div>
 
