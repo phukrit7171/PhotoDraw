@@ -60,10 +60,8 @@ function uploadImage() {
 function sendImg_toServer(file) {
     // Create a new FormData object to handle the file data
     const formData = new FormData();
-
     // Instead of appending the base64 string, append the raw file data
-    formData.append('image', file, file.name);
-
+    formData.append('file', file, file.name);
     // Perform a fetch request to the backend endpoint (replace with your actual backend URL)
     fetch('http://localhost:8000/upload', {
         method: 'POST',
