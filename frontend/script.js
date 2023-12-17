@@ -38,42 +38,46 @@ function randomWalk() {
     }
 }
 
-// Call the function when upload image and send a image to server using banary tranmission
+// Call the function when uploading an image and send an image to the server using binary transmission
+let imageUrl;  // Variable to store the Data URL of the image
+
 function uploadImage() {
     const fileInput = document.getElementById('imgUpload');
     const uploadedImage = document.getElementById('uploadedImage');
-
     const file = fileInput.files[0];
 
     if (file) {
         const reader = new FileReader();
-        reader.onload = function (e) {
-            uploadedImage.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
 
-        sendImg_toServer(file);
-    } else {
-        console.error('No file selected');
+        reader.onload = async (e) => {
+            imageUrl = e.target.result;  // Store the Data URL in imageUrl
+            uploadedImage.src = imageUrl;
+            await sendImgToServer(file);
+            uploadedImage.src = imageUrl;  // Set the src attribute to imageUrl after the fetch request
+        };
+
+        reader.readAsDataURL(file);
     }
 }
-function sendImg_toServer(file) {
-    // Create a new FormData object to handle the file data
+
+async function sendImgToServer(file) {
     const formData = new FormData();
-    // Instead of appending the base64 string, append the raw file data
     formData.append('file', file, file.name);
-    // Perform a fetch request to the backend endpoint (replace with your actual backend URL)
-    fetch('http://localhost:8000/upload', {
-        method: 'PUT',
-        body: formData,
-    })
-        .then(response => response.json())
-        .then(data => {
-            // Log the response from the backend
-            console.log('Response from backend:', data);
-        })
-        .catch(error => {
-            // Log an error message
-            console.error('Error uploading image:', error);
+
+    try {
+        const response = await fetch('http://localhost:8000/upload', {
+            method: 'POST',
+            body: formData,
         });
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log('Response from the backend:', data);
+        } else {
+            console.error('Error uploading image:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
 }
+

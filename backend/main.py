@@ -5,7 +5,7 @@ from pathlib import Path
 app = FastAPI(
     debug=True,
     max_upload_size=100 * 1024 * 1024 
-              )
+)
 
 # CORS configuration to allow all origins during development
 app.add_middleware(
@@ -16,22 +16,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.put("/upload")
+@app.post("/upload")
 async def upload_image(file: UploadFile = File(...)):
-    print(f"Received file: {file.filename}")
-    print(f"Content-Type: {file.content_type}")
-    print(f"File size: {len(await file.read())} bytes")
-    print(f"File content: {await file.read()}")  # Add this line to inspect file content
-    
     try:
         contents = await file.read()
+        print(f"Received file: {file.filename}")
+        print(f"Content-Type: {file.content_type}")
+        print(f"File size: {len(contents)} bytes")
+        print(f"File content: {contents}")  # Add this line to inspect file content
+
         save_directory = Path("Problem")
         save_directory.mkdir(parents=True, exist_ok=True)
         save_path = save_directory / file.filename
-        
+
         with save_path.open("wb") as image_file:
             image_file.write(contents)
-        
+
         return {"message": "Image uploaded and saved successfully", "filename": file.filename}
     except Exception as e:
         print(f"Error processing image: {e}")

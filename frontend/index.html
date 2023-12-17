@@ -1,99 +1,167 @@
 <!DOCTYPE html>
 <html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PhotoDraw เป็นเว็บแอพพลิเคชั่นที่ช่วยให้คุณสามารถวาดภาพสิ่งที่อยู่ตรงหน้าได้"
+    />
+    <meta name="author" content="Mr.Phukrit Kittinontana" />
+    <meta name="keywords" content="Drawing วาดภาพ วาดรูป สอนวาดภาพ สอนวาดรูป" />
+    <title>PhotoDraw</title>
+    <link rel="shortcut icon" href="./imgs/logo.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PhotoDraw เป็นเว็บแอพพลิเคชั่นที่ช่วยให้คุณสามารถวาดภาพสิ่งที่อยู่ตรงหน้าได้" />
-  <meta name="author" content="Mr.Phukrit Kittinontana" />
-  <meta name="keywords" content="Drawing วาดภาพ วาดรูป สอนวาดภาพ สอนวาดรูป" />
-  <title>PhotoDraw</title>
-  <link rel="shortcut icon" href="./imgs/logo.png" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <!-- Navbar -->
+    <header class="container-lg rounded-bottom-5 pb-3">
+      <div class="border-bottom py-2 mb-3">
+        <span class="justify-content-start fst-italic fw-bold h4">
+          <a href="./">
+            <img
+              src="./imgs/logo.png"
+              alt="PhotoDraw Logo"
+              style="width: 50px; padding: 0px; margin: 0px"
+            />
+            PhotoDraw
+          </a>
+        </span>
+      </div>
+      <!-- Nav pills -->
+      <nav>
+        <ul class="nav nav-pills justify-content-evenly" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#home"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#drawing"
+              >Drawing</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              onclick="randomWalk()"
+              data-bs-toggle="pill"
+              href="#creativity"
+              >Creativity</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#prices">Prices</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Tab panes -->
 
-<body>
-  <!-- Navbar -->
-  <header class="container-lg rounded-bottom-5 pb-3">
-    <div class="border-bottom py-2 mb-3">
-      <span class="justify-content-start fst-italic fw-bold h4">
-        <a href="./">
-          <img src="./imgs/logo.png" alt="PhotoDraw Logo" style="width:50px;padding: 0px;margin: 0px;">
-          PhotoDraw
-        </a>
-      </span>
-    </div>
-    <!-- Nav pills -->
-    <nav>
-      <ul class=" nav nav-pills justify-content-evenly" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" data-bs-toggle="pill" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="pill" href="#drawing">Drawing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" onclick="randomWalk()" data-bs-toggle="pill" href="#creativity">Creativity</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="pill" href="#prices">Prices</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <!-- Tab panes -->
+    <!-- Inside the home tab -->
+    <div class="tab-content">
+      <div id="home" class="container-fluid tab-pane active text-center">
+        <br />
+        <img src="./imgs/logo.png" alt="PhotoDraw Logo" width="200px" />
+        <p class="h1 fst-italic fw-bold">PhotoDraw</p>
+        <p class="h4 text-white p-3">
+          is a web application that can make your drawing easier.
+        </p>
+        <div
+          class="container border-1 rounded-5 p-4 text-white mb-5"
+          style="background-color: #484848"
+        >
+          <p class="text-start">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are currently
+            developing this web application. Initially, we will focus on
+            developing a web application that can teach young children to learn
+            shapes as a basis for drawing in the future. Including creative
+            ideas We will then develop further for the general public soon.
+          </p>
+        </div>
+      </div>
 
-  <!-- Inside the home tab -->
-  <div class="tab-content">
-    <div id="home" class="container-fluid tab-pane active text-center"><br>
-      <img src="./imgs/logo.png" alt="PhotoDraw Logo" width="200px">
-      <p class="h1 fst-italic fw-bold">PhotoDraw</p>
-      <p class="h4 text-white p-3">is a web application that can make your drawing easier.</p>
-      <div class="container border-1 rounded-5 p-4 text-white mb-5" style="background-color: #484848;">
-        <p class="text-start">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are currently developing this web
-          application.
-          Initially, we will focus on developing a web application that can teach young children to learn shapes as a
-          basis for drawing in the future. Including creative ideas We will then develop further for the general public
-          soon.</p>
+      <!-- Inside the drawing tab -->
+      <div id="drawing" class="container-fluid tab-pane fade text-center">
+        <br />
+
+        <input
+    type="file"
+    accept=".jpg"
+    name="imgUpload"
+    id="imgUpload"
+    style="display: none"
+    onchange="uploadImage(event)"
+/>
+
+        <label for="imgUpload">
+          <img
+            class="img-fluid rounded-5"
+            id="uploadedImage"
+            src="./imgs/upload.png"
+            alt="upload"
+          />
+        </label>
+      </div>
+
+      <!-- Inside the creativity tab -->
+      <div id="creativity" class="container-fluid tab-pane fade text-center">
+        <br />
+        <div class="container m-1 p-0"></div>
+        <canvas
+          onclick="randomWalk()"
+          class="container-sm bg-white rounded-5 p-0 text-center"
+          id="canvas"
+        ></canvas>
+        <button
+          onclick="randomWalk()"
+          type="button"
+          class="btn btn-lg text-white rounded-5 py-2 my-3 container-fluid"
+          style="background-color: #976479"
+        >
+          Random
+        </button>
+        <p
+          class="container-fluid border-1 rounded-5 p-4 text-white mb-5"
+          style="background-color: #484848"
+        >
+          Try to imagine this into something according to your creativity and
+          draw it.
+        </p>
+      </div>
+
+      <!-- Inside the prices tab -->
+      <div id="prices" class="container-fluid tab-pane fade text-center">
+        <br />
+        <img
+          class="img-fluid p-1"
+          style="width: 20rem"
+          src="./imgs/NoAds.png"
+          alt="NoAds Paid"
+        />
+        <img
+          class="img-fluid p-1"
+          style="width: 20rem"
+          src="./imgs/UnlockMode.png"
+          alt="Unlock More Detail Mode Paid"
+        />
       </div>
     </div>
 
-    <!-- Inside the drawing tab -->
-    <div id="drawing" class="container-fluid tab-pane fade text-center"><br>
-      <input type="file" accept=".jpg" name="imgUpload" id="imgUpload" style="display:none;" onchange="uploadImage()" />
-      <label for="imgUpload">
-        <img class="img-fluid" id="uploadedImage" src="./imgs/upload.png" alt="upload">
-      </label>
-    </div>
+    <!-- Script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
 
-
-    <!-- Inside the creativity tab -->
-    <div id="creativity" class="container-fluid tab-pane fade text-center"><br>
-      <div class="container m-1 p-0">
-      </div>
-      <canvas onclick="randomWalk()" class="container-sm bg-white rounded-5 p-0 text-center" id="canvas"></canvas>
-      <button onclick="randomWalk()" type="button" class="btn btn-lg text-white rounded-5 py-2 my-3 container-fluid"
-        style="background-color: #976479;">Random</button>
-      <p class="container-fluid border-1 rounded-5 p-4 text-white mb-5" style="background-color: #484848;">
-        Try to imagine this into something according to your creativity and draw it.
-      </p>
-    </div>
-
-    <!-- Inside the prices tab -->
-    <div id="prices" class="container-fluid tab-pane fade text-center"><br>
-      <img class="img-fluid p-1" style="width: 20rem;" src="./imgs/NoAds.png" alt="NoAds Paid">
-      <img class="img-fluid p-1" style="width: 20rem;" src="./imgs/UnlockMode.png" alt="Unlock More Detail Mode Paid">
-    </div>
-  </div>
-
-  <!-- Script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-
-  <script src="./script.js"></script>
-</body>
-
+    <script src="./script.js"></script>
+  </body>
 </html>
