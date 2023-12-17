@@ -39,12 +39,11 @@ function randomWalk() {
 }
 
 // Call the function when uploading an image and send an image to the server using binary transmission
-let imageUrl;  // Variable to store the Data URL of the image
-
 function uploadImage() {
     const fileInput = document.getElementById('imgUpload');
     const uploadedImage = document.getElementById('uploadedImage');
     const file = fileInput.files[0];
+    let imageUrl;  // Variable to store the Data URL of the image
 
     if (file) {
         const reader = new FileReader();
@@ -52,8 +51,7 @@ function uploadImage() {
         reader.onload = async (e) => {
             imageUrl = e.target.result;  // Store the Data URL in imageUrl
             uploadedImage.src = imageUrl;
-            await sendImgToServer(file);
-            uploadedImage.src = imageUrl;  // Set the src attribute to imageUrl after the fetch request
+            sendImgToServer(file);  // Call this after the image source has been set
         };
 
         reader.readAsDataURL(file);
@@ -80,4 +78,3 @@ async function sendImgToServer(file) {
         console.error('Fetch error:', error);
     }
 }
-
