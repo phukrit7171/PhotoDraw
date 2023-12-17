@@ -64,7 +64,7 @@ function sendImg_toServer(file) {
     formData.append('file', file, file.name);
     // Perform a fetch request to the backend endpoint (replace with your actual backend URL)
     fetch('http://localhost:8000/upload', {
-        method: 'POST',
+        method: 'PUT',
         body: formData,
     })
         .then(response => response.json())

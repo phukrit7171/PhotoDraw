@@ -16,7 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("/upload")
+@app.put("/upload")
 async def upload_image(file: UploadFile = File(...)):
     print(f"Received file: {file.filename}")
     print(f"Content-Type: {file.content_type}")
