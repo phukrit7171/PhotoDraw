@@ -23,7 +23,7 @@ async def upload_image(file: UploadFile = File(...)):
         print(f"Received file: {file.filename}")
         print(f"Content-Type: {file.content_type}")
         print(f"File size: {len(contents)} bytes")
-        print(f"File content: {contents}")  # Add this line to inspect file content
+        #print(f"File content: {contents}")  # Add this line to inspect file content
 
         save_directory = Path("Problem")
         save_directory.mkdir(parents=True, exist_ok=True)
